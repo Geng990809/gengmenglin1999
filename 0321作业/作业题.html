@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><title>Untitled</title><meta charset='utf-8'><link href='https://cdn.maxiang.io/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<ol><li rel="1"><p>function(){}      window</p></li>
+<li rel="2"><p>undefined     ‘language’</p></li>
+<li rel="3"><p>‘window’</p></li>
+<li rel="4"><p>‘24’</p></li>
+<li rel="5"><p>‘12’</p></li>
+<li rel="6"><p>22  23  65  30</p></li>
+<li rel="7"><p>以下代码不能实现     现在的效果都是显示的最后一个 <br>
+利用闭包的保存作用：形成一个不被释放的私有上下文 <br>
+或者用自定义属性 ：获取到的input元素对象有很多的内置属性，可以设置自定义属性，每一轮循环的时候，给当前元素的堆内存中设置一个自定义属性，属性值存储当前input元素对象的索引。</p></li>
+<li rel="8"><p>闭包有保护作用把大麻放到一个闭包中，可以防止我们定义的变量和方法  和  用户定义的冲突。 <br>
+缺点是，每一个闭包都会形成一个堆内存，而且不能释放，比较消耗性能。</p></li>
+<li rel="9"><p>var存在变量提升 ，而let不存在； <br>
+let是不允许重复声明的，var可以重复声明。 <br>
+在全局上下文中，用var声明的变量是全局变量，也相当于给GO（Window）设置了一个属性，而且两者建立映射机制，但是let声明的变量仅仅是群居变量，和GO没关系。</p></li>
+<li rel="10"><p>for (var i = 0; i &lt; 10; i++) { <br>
+        console.log(i); <br>
+}</p></li>
+<li rel="11"><p>undefined     10 <br>
+因为此时函数中的b没有变量提升。 <br>
+ var b = 10; <br>
+(function b() { <br>
+var b = 20; =&gt;加上一个var <br>
+console.log(b); <br>
+})(); <br>
+console.log(b);</p></li>
+</ol></div></body></html>
