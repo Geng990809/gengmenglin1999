@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head><title>Untitled</title><meta charset='utf-8'><link href='https://cdn.maxiang.io/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<ol><li rel="1"><p>不会</p></li>
+<li rel="2"><p>7    10  16 15</p></li>
+<li rel="3"><p>flase  true  true  flase  object   10 NaN -1    NaN 报错</p></li>
+<li rel="4"><p>‘0’  ‘30’</p></li>
+<li rel="5"><p>‘TomTomjoin’</p></li>
+<li rel="6"><p>1  报错</p></li>
+<li rel="7"><p>‘zhufeng’  5000  ‘zhufeng’  9 5000</p></li>
+<li rel="8"><p>不会</p></li>
+<li rel="9"></li>
+</ol>
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><div class="hljs-line"><span class="hljs-built_in">Array</span>.prototype.Unique = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Unique</span>(<span class="hljs-params"></span>) </span>{
+</div><div class="hljs-line">    <span class="hljs-keyword">let</span> obj = {};
+</div><div class="hljs-line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.length; i++) {
+</div><div class="hljs-line">        <span class="hljs-keyword">let</span> item = <span class="hljs-keyword">this</span>[i];
+</div><div class="hljs-line">        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> obj[item] !== <span class="hljs-string">"undefined"</span>) {
+</div><div class="hljs-line">            <span class="hljs-keyword">this</span>[i] = <span class="hljs-keyword">this</span>[<span class="hljs-keyword">this</span>.length - <span class="hljs-number">1</span>];
+</div><div class="hljs-line">            <span class="hljs-keyword">this</span>.length--;
+</div><div class="hljs-line">            i--;
+</div><div class="hljs-line">            <span class="hljs-keyword">continue</span>;
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">        obj[item] = item;
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">    obj = <span class="hljs-literal">null</span>;
+</div><div class="hljs-line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+</div><div class="hljs-line">};
+</div><div class="hljs-line"><span class="hljs-keyword">let</span> ary = [<span class="hljs-number">12</span>,<span class="hljs-number">23</span>,<span class="hljs-number">12</span>,<span class="hljs-number">13</span>,<span class="hljs-number">13</span>,<span class="hljs-number">12</span>,<span class="hljs-number">23</span>,<span class="hljs-number">14</span>,<span class="hljs-number">8</span>];
+</div><div class="hljs-line">ary.Unique().ary.sort(<span class="hljs-function">(<span class="hljs-params">a,b</span>)=&gt;</span>a-b);
+</div><div class="hljs-line"><span class="hljs-built_in">console</span>.log(ary);
+</div></code></pre>
+
+<p>10.</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs qml"><div class="hljs-line"><span class="hljs-keyword">let</span> <span class="hljs-built_in">url</span> = <span class="hljs-string">"locallhost?key1=val1&amp;key2=val2&amp;key3=val3"</span>;
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getParam</span>(<span class="hljs-params">url</span>) </span>{
+</div><div class="hljs-line">    <span class="hljs-keyword">let</span> getParam = <span class="hljs-built_in">url</span>.getParam(<span class="hljs-string">'?'</span>),
+</div><div class="hljs-line">        getText = <span class="hljs-built_in">url</span>.substring(getParam + <span class="hljs-number">1</span>);
+</div><div class="hljs-line">    <span class="hljs-keyword">let</span> obj = {};
+</div><div class="hljs-line">    <span class="hljs-keyword">if</span> (getText) {
+</div><div class="hljs-line">        getText.split(<span class="hljs-string">'&amp;'</span>).forEach(item =&gt; {
+</div><div class="hljs-line">            <span class="hljs-keyword">let</span> arr = item.split(<span class="hljs-string">'='</span>);
+</div><div class="hljs-line">            obj[arr[<span class="hljs-number">0</span>]] = arr[<span class="hljs-number">1</span>];
+</div><div class="hljs-line">        });
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">    <span class="hljs-keyword">return</span> obj;
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">url</span>.getParam(<span class="hljs-string">"key3"</span>));
+</div><div class="hljs-line">不会做
+</div></code></pre>
+
+<p>附加1.不会 <br>
+附加2.</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs lsl"><div class="hljs-line">var a = <span class="hljs-number">1</span>;
+</div><div class="hljs-line">if (a == <span class="hljs-number">1</span> || a == <span class="hljs-number">2</span> || a == <span class="hljs-number">3</span>) {
+</div><div class="hljs-line">    console.log(<span class="hljs-number">1</span>);
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p>在a=1时，并且是逻辑或的时候，会输出1.</p>
+
+<p>附加3.{2 : 1,  3 : 2 ,length: 4, push : Array.prototype.push} <br>
+附加4. 2 4 1 5 2 1 3</p></div></body></html>
