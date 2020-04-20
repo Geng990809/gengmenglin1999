@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="box">
+        <img src="images/1.jpeg" alt="">
+    </div>
+</body>
+<script>
+    let box = document.querySelector('#box'),
+    img = document.querySelector('img');
+    let opacity = 0;
+    let step = 1/(1000/30);
+    let timer = setInterval(()=>{
+            opacity += step;
+            if ( opacity > 1){
+                opacity = 1;
+                clearInterval(timer)
+            }
+            img.style.opacity = opacity;
+        },30)  
+</script>
+</html>
