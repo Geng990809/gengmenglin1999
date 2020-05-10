@@ -206,7 +206,7 @@
 	display: flex;
 	box-sizing: border-box;
 	/* width: 4000px; */
-	height: 100%;
+	height: 506px;
 
 	/* 基于CSS3中的过渡动画实现切换中的动画效果 */
 	transition: left .3s linear 0s;
@@ -216,7 +216,7 @@
     /* 每一个SLIDER的宽度和CONTAINER的宽度保持一致 */
 	box-sizing: border-box;
 	width: 100%;
-	height: 100%;
+	height: 506px;
 	overflow: hidden;
 }
 
@@ -253,7 +253,7 @@
 }
 
 /* 左右按钮 */
-.arrow {
+.arrow1 {
 	display: none;
 	position: absolute;
 	z-index: 999;
@@ -264,16 +264,16 @@
 	background: url(../images/pre.png) no-repeat 0 0;
 }
 
-.arrow.changeLeft {
+.arrow1.buttonLeft {
 	left: 400px;
 }
 
-.arrow.changeRight {
+.arrow1.buttonRight {
 	right: 200px;
 	background-position: -50px 0;
 }
 
-.lunbo:hover .arrow {
+.lunbo:hover .arrow1 {
 	display: block;
 }
 .shopList{
@@ -509,15 +509,15 @@
     height: 20px;
 }
 .together{
-    width: 1000px;
+    width: 1100px;
     margin: 0 auto;
 }
 .mai{
-    width: 1000px;
+    width: 1100px;
     margin: 0 auto;
 }
 .mai img{
-    width: 1000px;
+    width: 100%;
 }
 .hot{
     margin-top: 80px;
@@ -550,21 +550,23 @@
     line-height: 12px;
 }
 
-.container {
+.zhong {
+    float: left;
 	position: relative;
 	/* margin: 0 auto; */
-	width: 181px;
-	height: 181px; 
-	overflow: hidden;
+	width: 220px;
+    height: 342px; 
+    border: 1px solid silver;
+    overflow: hidden;
 }
 
-.container .wrapper {
+.zhong .wrap {
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
-.container .wrapper .slide {
+.zhong .wrap .slide {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -579,20 +581,37 @@
 	/* 动画 */
 	transition: opacity .3s;
 }
+.zhong .wrap .slide .content{
+    box-sizing: border-box;
+    background: rgba(34, 34, 34, 0.87);
+    height: 122px;
+}
+.zhong .wrap .slide .content h5{
+    color:white;
+    font-size: 22px;
+    /* padding: 18px auto ; */
+    line-height: 60px;
+    text-align: center;
+}
+.zhong .wrap .slide .content p{
+    color: white;
+    /* text-align: center; */
+    padding-left: 70px;
+}
 
 /* 默认展示第一张图片 */
-.container .wrapper .slide:nth-child(1) {
+.zhong .wrap .slide:nth-child(1) {
 	z-index: 1;
 	opacity: 1;
 }
 
-.container .wrapper .slide img {
+.zhong .wrap .slide img {
 	width: 100%;
-	height: 100%;
+	height: 220px;
 }
 
 /* 分页器 */
-.pagination {
+/* .pagination {
 	position: absolute;
 	z-index: 999;
 	bottom: 10px;
@@ -616,7 +635,7 @@
 
 .pagination li.active {
 	background: lightcoral;
-}
+} */
 
 /* 左右按钮 */
 .arrow {
@@ -641,4 +660,280 @@
 .container:hover .arrow {
 	display: block;
 }
+.hot{
+    margin-top: 35px;
+}
+.hot .crea{
+    margin: 20px 0;
+}
+.hot .crea ul{}
+.hot .crea ul li{
+    width: 200px;
+    height: 170px;
+    padding-left: 5px;
+    border: 1px solid #eee;
+    float: left;
+}
+.hot .crea ul li img{
+    /* margin: 0 auto; */
+    padding-left: 38px;
+}
+.hot .crea ul li h6{
+    padding-top: 15px;
+    text-align: center;
+    font-size: 13px;
+}
+.makeup {
+    
+}
+.makeup .beautiful{
+    
+}
+.makeup .beautiful .title2{
+    float: left;
+    
+}
+.makeup .beautiful .title2 h3{
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    font-size: 24px;
+}
+.makeup .beautiful .title2 ul{
+    margin-left: 28px;
+    float: left;
+}
+.makeup .beautiful .title2 ul li{
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    color: #6b6e6d;
+    font-size: 14px;
+    padding-left: 13px;
+}
+.makeup .beautiful .title2 ul li.act a{
+    color: rgb(250, 40, 75);
+}
+.makeup .beautiful .title2 ul li a{
+    color: #6b6e6d;
+}
+.makeup .beautiful .title2Right{
+    height: 50px;
+    line-height: 50px;
+    float: right;
+}
+.makeup .beautiful .title2Right a{
+    color: rgb(124, 115, 115);
+    font-size: 14px;
+}
+.dapai{
 
+}
+.dapai .heart{
+    float: left;
+}
+.dapai .heart .card{
+    float: left;
+    position: relative;
+    width: 300px;
+    height: 500px;
+}
+.dapai .heart .card img{
+    width: 100%;
+}
+.heart .card ul{
+    position: absolute;
+    bottom: 60px;
+}
+.heart .card ul li{
+    background: white;
+    float: left;
+    margin-left: 14px;
+    margin-top: 8px;
+    border: 1px solid #e2e4e3;
+    border-radius: 30px;
+    width: 80px;
+    height: 30px;
+}
+.heart .card ul li:hover a{
+    color: brown;
+}
+.heart .card ul li a{
+    color: black;
+    font-size: 12px;
+    padding-left: 16px;
+    line-height: 30px;
+}
+.heart .sellWell{
+    float: left;
+    width: 544px;
+}
+.sellWell ul{}
+.sellWell ul li{
+    float: left;
+}
+.sellWell ul li h4{
+    text-align: center;
+}
+.sellWell ul li h4 a{
+    /* padding-left: 90px; */
+    padding-top: 45px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    color: black;
+}
+/* .sellWell ul li p{
+    margin-left: 60px;
+} */
+.sellWell ul li p a{
+    color:black;
+    font-size: 16px;
+    padding-left: 80px;
+    margin-top: 10px;
+    line-height: 20px;
+}
+.sellWell ul li{
+    
+    border: 1px solid #eee;
+    width: 270px;
+    height: 241px;
+}
+.sellWell ul li img{
+   margin-left: 30px;
+}
+.renctly{
+    float: left;
+}
+.renctly .hotSell{
+    border: 1px solid #eee;
+    width: 250px;
+    height: 50px;
+}
+.renctly .hotSell p{
+    text-align: center;
+    line-height: 50px;
+}
+.zhon{
+    float: left;
+	position: relative;
+	/* margin: 0 auto; */
+	width: 250px;
+    height: 460px; 
+    /* border: 1px solid silver; */
+    overflow: hidden;
+}
+.zhon .wrappe{
+    overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.zhon .wrappe .slid {
+    /* overflow: hidden; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+    height:280px;
+	/* 初始默认样式 */
+	z-index: 0;
+	opacity: 0;
+
+	/* 动画 */
+	transition: opacity .3s;
+}
+/* 默认展示第一张图片 */
+.zhon .wrappe .slid:nth-child(1) {
+	z-index: 1;
+	opacity: 1;
+}
+.zhon .wrappe .slid .image {
+    box-sizing: border-box;
+    margin-left: 10px;
+    float: left;
+    box-sizing: border-box;
+    margin-top: 5px;
+    width: 75px;
+    height: 50px;
+}
+.zhon .slid ul li{
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    width: 249px;
+    height: 107px;
+}
+.zhon .slid ul li .word{
+    font-weight: normal;
+    float: left;
+    margin-top: 10px;
+}
+.zhon .slid ul li .word h5{
+    font-weight: normal;
+    color: #999;
+}
+.zhon .slid ul li .word p{
+    padding-left: 5px;
+    font-size: 12px;
+    height: 35px;
+    line-height: 35px;
+    color: #999;
+}
+.zhon .slid ul li .word .price {
+    box-sizing: border-box;
+    margin-left: 10px;
+}
+.zhon .slid ul li .word .price p{
+    font-size: 19px;
+    color: red;
+}
+.zhon .slid ul li .word .price p span{
+    font-size: 14px;
+    color: #999;
+}
+.brand{}
+.brand h3{
+    border: 1px solid #eee;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    font-size: 18px;
+}
+.brand .pic{}
+.brand .pic ul{}
+.pic ul li{
+    position: relative;
+    box-sizing: border-box;
+    /* padding-top: 5px; */
+    /* padding-left: 40px; */
+    border: 1px solid #eee;
+    width: 220px;
+    height: 160px;
+    float: left;
+}
+.pic ul li p{
+    margin-right: 8px;
+    margin-top: 3px;
+    display: none;
+    background: url(../images/heart.png) no-repeat;
+    width: 20px;
+    height: 20px;
+}
+.pic ul li img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+.pic ul li a{
+    margin-left: 50px;
+}
+.pic ul li:hover p{
+    float: right;
+    display: block;
+}
