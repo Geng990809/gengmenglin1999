@@ -1,3 +1,6 @@
+.content{
+    background-color: whitesmoke;
+}
 .topBanner{
     width: 100%;
     height: 100%;
@@ -81,16 +84,21 @@
     top: 35px;
     z-index: 1;
     display: none;
-    background-color: rgb(216, 213, 209);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #eee;
 }
 .topNav .rightNav .person:hover .person-hidden,.topNav .rightNav .guest:hover .guest-hidden,.topNav .rightNav .center:hover .center-hidden,.topNav .rightNav .buy:hover .buy-hidden,
 .topNav .rightNav .more:hover .more-hidden{
     display: block;
+    width: 100px;
 }
 .topNav .rightNav .person li,.topNav .rightNav .guest li,.topNav .rightNav .center li,.topNav .rightNav .buy li,.topNav .rightNav .more li{
+    width: 100%;
     float: none;
 }
 .topNav .rightNav .person li a,.topNav .rightNav .guest li a,.topNav .rightNav .center li a,.topNav .rightNav .buy li a,.topNav .rightNav .more li a{
+    width: 100%;
+    text-align: center;
     box-sizing: border-box;
     border-bottom: 1px solid #e2e4e3;
     font-size: 12px;
@@ -168,6 +176,9 @@
     width: 700px;
     margin: 0 auto;
 }
+.bottomNav .dis{
+    width: 100%;
+}
 .bottomNav ul{
     margin-left: 30px;
 }
@@ -185,46 +196,47 @@
 .bottomNav ul li a:hover{
     color: rgb(230, 28, 55);
 }
-
-
 .lunbo {
-	position: relative;
-	box-sizing: border-box;
-	margin: 20px auto;
+    position: relative;
+	margin: 0 auto;
 	width: 100%;
-	height: 506px;
+    height: 546px;
 	overflow: hidden;
 }
 
 .lunbo .wrapper {
-	/* 让WRAPPER相对于容器定位，后期的左右运动是修改WRAPPER的LEFT样式值即可 */
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	/*WIDTH 需要根据SLIDER（包含克隆的）动态计算出来的 */
-	display: flex;
-	box-sizing: border-box;
-	/* width: 4000px; */
-	height: 506px;
-
-	/* 基于CSS3中的过渡动画实现切换中的动画效果 */
-	transition: left .3s linear 0s;
+    margin: 40px 0;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
 
 .lunbo .wrapper .slider {
-    /* 每一个SLIDER的宽度和CONTAINER的宽度保持一致 */
-	box-sizing: border-box;
-	width: 100%;
-	height: 506px;
-	overflow: hidden;
-}
-
-/* .lunbo .wrapper .slider img {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-} */
+	overflow: hidden;
 
+	/* 初始默认样式 */
+	z-index: 0;
+	opacity: 0;
+
+	/* 动画 */
+	transition: opacity .3s;
+}
+
+/* 默认展示第一张图片 */
+.lunbo .wrapper .slider:nth-child(1) {
+	z-index: 1;
+	opacity: 1;
+}
+
+.lunbo .wrapper .slider img {
+	width: 100%;
+	height: 100%;
+}
 /* 分页器 */
 .pagination {
 	position: absolute;
@@ -277,12 +289,13 @@
 	display: block;
 }
 .shopList{
+    z-index: 999;
     position: absolute;
-    top: 208px;
-    left: 200px;
+    bottom: 40px;
+    left: 180px;
     width: 150px;
     height: 506px;
-    background-color: rgba(233, 16, 88, 0.918);;
+    background-color: rgba(190, 18, 76, 0.993);;
 }
 .shopList p{
     height: 40px;
@@ -467,8 +480,9 @@
     display: block;
 }
 .show{
+    z-index: 999;
     position: absolute;
-    bottom: 98px;
+    bottom: 0;
     width: 100%;
     height: 40px;
     background: rgba(7, 7, 7, 0.342);
@@ -554,7 +568,7 @@
     float: left;
 	position: relative;
 	/* margin: 0 auto; */
-	width: 220px;
+	width: 250px;
     height: 342px; 
     border: 1px solid silver;
     overflow: hidden;
@@ -609,34 +623,6 @@
 	width: 100%;
 	height: 220px;
 }
-
-/* 分页器 */
-/* .pagination {
-	position: absolute;
-	z-index: 999;
-	bottom: 10px;
-	left: 50%;
-	transform: translateX(-50%);
-	padding: 5px 10px;
-	background: rgba(255, 255, 255, .3);
-	font-size: 0;
-	border-radius: 26px;
-}
-
-.pagination li {
-	display: inline-block;
-	margin: 0 10px;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background: lightblue;
-	cursor: pointer;
-}
-
-.pagination li.active {
-	background: lightcoral;
-} */
-
 /* 左右按钮 */
 .arrow {
 	display: none;
@@ -668,23 +654,34 @@
 }
 .hot .crea ul{}
 .hot .crea ul li{
+    background-color: white;
     width: 200px;
     height: 170px;
     padding-left: 5px;
     border: 1px solid #eee;
     float: left;
 }
+.hot .crea ul li:hover img{
+    margin-left: 40px;
+    width: 60px;
+    height: 60px;
+    
+}
+.hot .crea .remo{
+    display: none;
+}
 .hot .crea ul li img{
     /* margin: 0 auto; */
     padding-left: 38px;
+    padding-top: 15px;
 }
 .hot .crea ul li h6{
-    padding-top: 15px;
+    padding-top: 13px;
     text-align: center;
     font-size: 13px;
 }
 .makeup {
-    
+    margin-top: 30px;
 }
 .makeup .beautiful{
     
@@ -743,7 +740,7 @@
 }
 .heart .card ul{
     position: absolute;
-    bottom: 60px;
+    bottom: 40px;
 }
 .heart .card ul li{
     background: white;
@@ -770,6 +767,7 @@
 }
 .sellWell ul{}
 .sellWell ul li{
+    background-color: white;
     float: left;
 }
 .sellWell ul li h4{
@@ -777,44 +775,71 @@
 }
 .sellWell ul li h4 a{
     /* padding-left: 90px; */
-    padding-top: 45px;
-    line-height: 60px;
+    padding-top: 35px;
+    line-height: 40px;
     text-align: center;
-    font-size: 24px;
+    font-size: 21px;
     font-weight: normal;
     color: black;
 }
-/* .sellWell ul li p{
-    margin-left: 60px;
-} */
+.sellWell ul li p{
+    text-align: center;
+}
 .sellWell ul li p a{
-    color:black;
-    font-size: 16px;
-    padding-left: 80px;
-    margin-top: 10px;
+    color:#999;
+    font-size: 14px;
+    /* padding-left: 80px; */
     line-height: 20px;
 }
 .sellWell ul li{
-    
     border: 1px solid #eee;
     width: 270px;
-    height: 241px;
+    height: 245px;
 }
-.sellWell ul li img{
-   margin-left: 30px;
+.sellWell ul li .everyday{
+    box-sizing: border-box;
+    margin-left: 47px; 
+    margin-top: 20px;  
 }
+  
 .renctly{
     float: left;
 }
 .renctly .hotSell{
+    background-color: white;
     border: 1px solid #eee;
     width: 250px;
     height: 50px;
 }
 .renctly .hotSell p{
-    text-align: center;
+    /* text-align: center; */
+    padding-left: 30px;
+    float: left;
     line-height: 50px;
 }
+.renctly .hotSell .pagina {
+    padding-left: 30px;
+    padding-top: 20px;
+    float: left;
+	background: rgba(255, 255, 255, .3);
+	font-size: 0;
+	border-radius: 26px;
+}
+
+.renctly .hotSell .pagina li {
+	display: inline-block;
+	margin: 0 8px;
+	width: 8px;
+	height:8px;
+	border-radius: 50%;
+	background: rgb(183, 185, 185);
+	cursor: pointer;
+}
+
+.renctly .hotSell .pagina li.active {
+	background: rgb(10, 10, 10);
+}
+
 .zhon{
     float: left;
 	position: relative;
@@ -837,7 +862,6 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-    height:280px;
 	/* 初始默认样式 */
 	z-index: 0;
 	opacity: 0;
@@ -855,15 +879,16 @@
     margin-left: 10px;
     float: left;
     box-sizing: border-box;
-    margin-top: 5px;
+    margin-top: 13px;
     width: 75px;
     height: 50px;
 }
 .zhon .slid ul li{
+    background-color: white;
     box-sizing: border-box;
     border: 1px solid #eee;
     width: 249px;
-    height: 107px;
+    height: 110px;
 }
 .zhon .slid ul li .word{
     font-weight: normal;
@@ -904,6 +929,7 @@
 .brand .pic{}
 .brand .pic ul{}
 .pic ul li{
+    background-color: white;
     position: relative;
     box-sizing: border-box;
     /* padding-top: 5px; */
@@ -936,4 +962,304 @@
 .pic ul li:hover p{
     float: right;
     display: block;
+}
+.guess{
+    height: 500px;
+}
+.like{
+    margin-top: 30px;
+}
+.like h3{}
+.like h3 span{
+    font-size: 13px;
+    color: #999;
+    font-weight: normal;
+    padding-left: 15px;
+}
+.record{
+   
+    
+}
+.record ul{}
+.record ul li{
+    width: 230px;
+    
+    position: relative;
+    margin-top: 25px;
+    margin-left:30px;
+    float: left;
+    
+}
+.record ul li .choose{
+    position: relative;
+    width: 230px;
+    height: 230px;
+    border: 1px solid #eee;
+    background-color: white;
+}
+.record ul li .choose img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 180px;
+    height: 180px;
+}
+.record .speak{
+    margin-top: 20px;
+}
+.record .pri p{
+    margin-top: 20px;
+    float: left;
+    font-weight: bold;
+    color: red;
+    font-size: 22px;
+}
+.record .pri span{
+    font-weight: normal;
+    color: #999;
+    font-size: 12px;
+}
+.record .pri .number{
+    float: left;
+    margin-left: 20px;
+}
+.aside-left{
+    background-color: white;
+    position: absolute;
+    top: 780px;
+    left: 20px;
+    z-index: 99;
+}
+.aside-left .big{
+    border: 1px solid #eee;
+    width: 100px;
+}
+.aside-left .big .eight{
+    height: 50px;
+    border: 1px solid #eee;
+}
+.aside-left .big .eight h3{
+    color: rgb(235, 34, 67);
+    padding-top: 5px;
+}
+.aside-left .big .eight p{
+    color: #999;
+    font-size: 12px;
+}
+.aside-left .big .re{
+    border: 1px solid #eee;
+    height: 50px;
+}
+.aside-left .big .re a{
+    box-sizing: border-box;
+    padding-left: 6px;
+    color: #000;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.aside-left .big .re a:hover {
+    background-color: whitesmoke;
+    color: rgb(255, 0, 106);
+}
+.aside-left .big ul{
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+.aside-left .big ul li{
+    
+    height: 32px;
+    line-height: 32px;
+}
+.aside-left .big ul li a{
+    color: #999;
+    font-size: 12px;
+    margin-left: 6px;
+}
+.aside-left .big ul li:hover{
+    background-color: whitesmoke;
+}
+.aside-left .big ul li:hover a{
+    color:rgb(255, 0, 106);
+}
+.aside-right{
+    background: white;
+    position: absolute;
+    top: 800px;
+    right: 10px;
+    z-index: 99;
+}
+.aside-right ul{}
+.aside-right ul li{
+    width: 65px;
+    height: 65px;
+    border: 1px solid rgb(243, 242, 242);
+}
+.aside-right ul li:hover{
+    background-color: rgb(230, 224, 224);
+}
+.aside-right ul li p{
+    color: #999;
+    font-size: 13px;
+    text-align: center;
+    height: 15px;
+}
+.aside-right ul li i{
+    display: inline-block;
+    margin-top: 6px;
+    margin-left: 23px;
+    width: 20px;
+    height: 20px;
+}
+.aside-right ul li.qian i{
+    background: url(../images/aside1.png) no-repeat;
+}
+.aside-right ul li.shop i{
+    background: url(../images/aside2.png) no-repeat;
+}
+.aside-right ul li.app i{
+    background: url(../images/aside3.png) no-repeat;
+}
+.aside-right ul li.turn i{
+    background: url(../images/aside4.png) no-repeat;
+}
+footer{
+    margin-top: 100px;
+}
+.footer-top{
+    width: 1000px;
+    margin: 30px auto;
+}
+.footer-top ul{
+    margin-left: -80px;
+}
+.footer-top ul li{
+    float: left;
+    margin-left: 80px;
+}
+.footer-top ul li .little{
+    float: left;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #999;
+}
+.footer-top ul li .little p{
+    font-weight: bold;
+    font-size: 20px;
+   text-align: center;
+   line-height: 45px;
+}
+.footer-top ul li .prom{
+    margin-left: 20px;
+    float: left;
+}
+.footer-top ul li .prom h4{
+    font-size: 17px;
+    height: 30px;
+}
+.footer-top ul li .prom p{
+    font-size: 13px;
+}
+
+.footer-cent{
+    width: 1000px;
+    margin: 30px auto;
+}
+.footer-cent .lolo{
+    float: left;
+}
+.footer-cent .left-cent{
+    float: left;
+}
+.footer-cent .left-cent dl{
+    margin-left: 40px;
+    float: left;
+}
+.footer-cent .left-cent dl dt {
+    height: 26px;
+    font-size: 16px;
+}
+.footer-cent .left-cent dl dd{
+    height: 30px;
+}
+.footer-cent .left-cent dl dd a{
+    font-size: 13px;
+    color: black;
+}
+.footer-cent .left-cent dl dd:hover a{
+    text-decoration: black;
+}
+.footer-cent .right-cent{
+    float: right;
+}
+.footer-cent .right-cent img{
+    width: 120px;
+    height: 120px;
+}
+.footer-cent .right-cent p{
+    font-size: 13px;
+    text-align: center;
+}
+.footer-bottom{
+    background-color: rgb(27, 25, 25);
+    height: 200px;
+}
+.footer-bottom .middle{
+    width: 1000px;
+    margin: 0 auto;
+}
+.footer-bottom  a{
+    padding-left: 10px;
+    color: #999;
+    font-size: 12px;
+}
+.footer-bottom span{
+    padding-left: 10px;
+    color: #999;
+    font-size: 12px;
+}
+.footer-bottom .middle .hid{
+    padding-top: 25px;
+    height: 30px;
+    text-align: center;
+}
+.footer-bottom .middle .zeng{
+    height: 30px;
+    text-align: center;
+}
+.footer-bottom .middle .police{
+    text-align: center;
+    height: 30px;
+}
+.footer-bottom .middle .police i{
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../images/bot1.png) no-repeat;
+    width: 20px;
+    height: 20px;
+}
+.footer-bottom .middle .icon{
+    text-align: center;
+}
+.footer-bottom .middle .icon i{
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../images/bot2.png) no-repeat;
+    width: 127px;
+    height: 47px;
+}
+.footer-bottom .middle .icon em{
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../images/bot3png.png) no-repeat;
+    width: 65px;
+    height: 70px;
+    margin-left: 10px;
 }
